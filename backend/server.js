@@ -3,7 +3,7 @@ const express = require('express')
 
 const server = express()
 const userData = JSON.parse(fs.readFileSync(`../public/data/user.json`))
-server.get('/api', (req, res) => {
+server.get('/api/user', (req, res) => {
   res.status(200).json({
     data: {
       api: userData,
