@@ -9,7 +9,9 @@ class APIService extends Component {
   static getData(options) {
     return fetch(options)
       .then((response) => response.json())
-      .then((data) => new User(data.nickname, data.avatar, data.lastOnline))
+      .then(({ api: { nickname, avatar, lastOnline } }) => {
+        return new User(nickname, avatar, lastOnline)
+      })
   }
 }
 

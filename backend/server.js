@@ -17,9 +17,7 @@ server.use((req, res, next) => {
 server.get('/api/user', (req, res) => {
   fs.readFile(`../public/data/user.json`, (err, data) => {
     res.status(200).json({
-      data: {
-        api: JSON.parse(data),
-      },
+      api: JSON.parse(data),
     })
   })
 })
