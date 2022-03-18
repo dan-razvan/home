@@ -11,11 +11,11 @@ class User {
     this.lastOnline = lastOnline
   }
   //dynamic / non-static
-  static get() {
-    return fetch('http://localhost:3001/api/user')
-      .then((response) => response.json())
-      .then((data) => new User(data.nickname, data.avatar, data.lastOnline))
-  }
+  // static get() {
+  //   return fetch('http://localhost:3001/api/user')
+  //     .then((response) => response.json())
+  //     .then((data) => new User(data.nickname, data.avatar, data.lastOnline))
+  // }
 }
 
 //functional solution
