@@ -3,7 +3,6 @@ import { useState } from 'react'
 import './reaction.styles.scss'
 
 const Reaction = ({ reactions }) => {
-  console.log(reactions)
   const [active, setActive] = useState(false)
   const [currentIcon, setCurrentIcon] = useState('')
   const clickHandler = () => {

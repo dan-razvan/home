@@ -3,15 +3,9 @@ import { User as UserModel } from '../model/User'
 import Reaction from './reaction/Reaction'
 import ReactionService from './reaction/ReactionService'
 
-//ui/user module
-//aceasta componenta raspunde de felul cum apare pe ecran, de cum interactioneaza cu clientul
 const User = ({ userObject, viewMode }) => {
   let [online, setOnline] = useState(true)
   let [reactions, setReactions] = useState('')
-
-  // console.log(a[0].type)
-
-  // validate the user object
 
   if (userObject !== null && !(userObject instanceof UserModel)) {
     throw new TypeError(
@@ -21,13 +15,10 @@ const User = ({ userObject, viewMode }) => {
 
   useEffect(() => {
     console.info('User component did mount or update')
-    // console.log(ReactionService())
     ReactionService().then((reactions) => {
       setReactions(reactions)
-      console.log(reactions)
       return reactions
     })
-    // console.dir(userObject)
   }, [online])
 
   if (userObject === null) {
