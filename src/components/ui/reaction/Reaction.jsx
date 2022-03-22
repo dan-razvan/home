@@ -10,8 +10,7 @@ const Reaction = ({ reactions }) => {
   const [active, setActive] = useState(false)
   const [currentIcon, setCurrentIcon] = useState('')
   const clickHandler = () => {
-    setActive(true)
-    console.log(reactions.api[0].icon)
+    active ? setActive(false) : setActive(true)
   }
   return (
     <div className="like-container">
@@ -23,7 +22,6 @@ const Reaction = ({ reactions }) => {
               className="icon"
               onClick={() => {
                 setCurrentIcon(reaction.type)
-                console.log(reaction.type)
               }}
             >
               <img src={reaction.icon} style={{ width: 20 }} />
