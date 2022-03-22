@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-import { BiLike } from 'react-icons/bi'
-import { BsSuitHeart } from 'react-icons/bs'
-
 import './reaction.styles.scss'
 
 const Reaction = ({ reactions }) => {
@@ -15,7 +12,7 @@ const Reaction = ({ reactions }) => {
   return (
     <div className="like-container">
       {active ? (
-        <div className="icons-container" id="love-div">
+        <div className="icons-container">
           {reactions.api.map((reaction) => (
             <button
               key={reaction.type}
@@ -29,7 +26,7 @@ const Reaction = ({ reactions }) => {
           ))}
         </div>
       ) : (
-        ''
+        <div className="icons-container inactive"></div>
       )}
 
       <button className="main-btn" onClick={clickHandler}>
