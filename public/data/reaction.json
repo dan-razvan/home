@@ -1,0 +1,6 @@
+[
+  { "type": "like", "icon": "/icons/like.png" },
+  { "type": "love", "icon": "/icons/love.png" },
+  { "type": "sad", "icon": "/icons/sad.png" },
+  { "type": "haha", "icon": "/icons/haha.png" }
+]

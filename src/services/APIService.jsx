@@ -3,8 +3,9 @@ import { Component } from 'react'
 import { User } from '../components/model/User'
 
 class APIService extends Component {
-  constructor() {
+  constructor(options) {
     super()
+    this.options = options
   }
   static getData(options) {
     return fetch(options)

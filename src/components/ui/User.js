@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
 import { User as UserModel } from '../model/User'
+import Reaction from './reaction/Reaction'
+import ReactionService from './reaction/ReactionService'
 
 //ui/user module
 //aceasta componenta raspunde de felul cum apare pe ecran, de cum interactioneaza cu clientul
 const User = ({ userObject, viewMode }) => {
   let [online, setOnline] = useState(true)
+  let [reactions, setReactions] = useState('')
+
+  // console.log(a[0].type)
 
   // validate the user object
 
@@ -16,6 +21,12 @@ const User = ({ userObject, viewMode }) => {
 
   useEffect(() => {
     console.info('User component did mount or update')
+    // console.log(ReactionService())
+    ReactionService().then((reactions) => {
+      setReactions(reactions)
+      console.log(reactions)
+      return reactions
+    })
     // console.dir(userObject)
   }, [online])
 
@@ -34,6 +45,7 @@ const User = ({ userObject, viewMode }) => {
         ) : (
           <div>
             <img src={avatar} />
+            <Reaction reactions={reactions} />
             <h2>{nickname}</h2>
             <p>{lastOnline}</p>
           </div>

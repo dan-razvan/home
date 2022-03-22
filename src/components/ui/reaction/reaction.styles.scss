@@ -1,0 +1,40 @@
+.like-container {
+  color: blue;
+  // background-color: red;
+  border-radius: 100px;
+  .icons-container {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #f1f1f1;
+    height: 40px;
+
+    // background-color: blue;
+    // height: 10px;
+    // width: 10px;
+
+    .icon {
+      height: 30px;
+      border: none;
+      border-radius: 50px;
+      &.icon:hover {
+        background-color: #999;
+        border-radius: 50px;
+      }
+    }
+  }
+  .main-btn {
+    border: none;
+    background-color: #fff;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.main-btn:hover {
+      background-color: #f4f4f4;
+    }
+  }
+}

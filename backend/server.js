@@ -21,3 +21,10 @@ server.get('/api/user', (req, res) => {
     })
   })
 })
+server.get('/api/reaction', (req, res) => {
+  fs.readFile(`../public/data/reaction.json`, (err, data) => {
+    res.status(200).json({
+      api: JSON.parse(data),
+    })
+  })
+})
